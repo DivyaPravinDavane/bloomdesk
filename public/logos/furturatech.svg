@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60" fill="none">
+  <g transform="translate(14, 8)">
+    <!-- Infinity / Double Helix Coral Loop -->
+    <path d="M12 20C12 14.5 16.5 10 22 10C27.5 10 32 14.5 32 20C32 25.5 27.5 30 22 30C16.5 30 12 25.5 12 20Z" stroke="#B91C1C" stroke-width="3" stroke-linecap="round"/>
+    <path d="M4 20C4 10 12 2 22 2C32 2 40 10 40 20C40 30 32 38 22 38C12 38 4 30 4 20Z" stroke="#DC2626" stroke-width="3" stroke-dasharray="28 8"/>
+  </g>
+  <text x="64" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" letter-spacing="1.5" fill="#B91C1C">FURTURATECH</text>
+  <text x="65" y="41" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.2" fill="#334155">INNOVATIVE SOLUTION</text>
+</svg>

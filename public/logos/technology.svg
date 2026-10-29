@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60" fill="none">
+  <g transform="translate(10, 10)">
+    <!-- Triple Chevron / Data Flow Icon -->
+    <path d="M4 8L12 20L4 32H10L18 20L10 8H4Z" fill="#0F172A"/>
+    <path d="M14 8L22 20L14 32H20L28 20L20 8H14Z" fill="#0891B2"/>
+    <path d="M24 8L32 20L24 32H30L38 20L30 8H24Z" fill="#0F172A"/>
+  </g>
+  <text x="60" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" letter-spacing="1.8" fill="#0F172A">TECHNOLOGY</text>
+  <text x="61" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.2" fill="#64748B">HIGH PERFORMANCE</text>
+</svg>

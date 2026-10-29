@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60" fill="none">
+  <g transform="translate(14, 10)">
+    <!-- Stamp / Brush Star Emblem -->
+    <circle cx="18" cy="20" r="14" stroke="#0F172A" stroke-width="2" stroke-dasharray="3 3"/>
+    <path d="M18 10V30M8 20H28" stroke="#0891B2" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="29" font-family="serif, Georgia" font-size="19" font-weight="900" letter-spacing="2" fill="#0F172A">ART</text>
+  <text x="100" y="29" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" letter-spacing="1.5" fill="#64748B">STUDIO</text>
+  <text x="56" y="43" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="3" fill="#94A3B8">CREATIVE TEAM</text>
+</svg>

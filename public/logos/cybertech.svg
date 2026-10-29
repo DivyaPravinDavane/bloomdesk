@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60" fill="none">
+  <g transform="translate(10, 10)">
+    <!-- Hexagonal Cyber Shield -->
+    <path d="M20 4L34 11V27L20 36L6 27V11L20 4Z" stroke="#0F172A" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M14 20L18 24L26 16" stroke="#0891B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="56" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" letter-spacing="1.5" fill="#0F172A">CYBERTECH</text>
+  <text x="57" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="2" fill="#64748B">SECURITY MADE SIMPLE</text>
+</svg>
