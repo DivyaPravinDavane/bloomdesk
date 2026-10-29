@@ -56,7 +56,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onBookTour }) => {
           variants={aboutContainerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.15 }}
           className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
         >
           {/* Scroll-Linked Vertical Divider Line between Columns (Desktop only) */}

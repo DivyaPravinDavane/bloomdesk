@@ -14,6 +14,7 @@ import { Award } from "lucide-react";
 import { RotatingBadge } from "./RotatingBadge";
 import { ParallaxImage } from "./ParallaxImage";
 import {
+  aboutContainerVariants,
   heroImageRevealVariants,
   heroInnerScaleVariants,
   topRightImageVariants,
@@ -78,8 +79,12 @@ export const ImageCollage: React.FC<ImageCollageProps> = ({ scrollYProgress }) =
   }, [mouseX, mouseY]);
 
   return (
-    <div
+    <motion.div
       ref={containerRef}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+      variants={aboutContainerVariants}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative w-full max-w-[540px] mx-auto py-8 sm:py-10 select-none"
@@ -243,6 +248,6 @@ export const ImageCollage: React.FC<ImageCollageProps> = ({ scrollYProgress }) =
           <RotatingBadge />
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };

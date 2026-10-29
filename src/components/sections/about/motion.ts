@@ -20,17 +20,19 @@ export const aboutContainerVariants: Variants = {
   },
 };
 
-// Hero Portrait Clip-Path Reveal: inset(100% 0 0 0 round 28px) -> inset(0 round 28px)
+// Hero Portrait Reveal: smooth fade-up & scale
 export const heroImageRevealVariants: Variants = {
   hidden: {
-    clipPath: "inset(100% 0 0 0 round 28px)",
     opacity: 0,
+    y: 30,
+    scale: 0.98,
   },
   visible: {
-    clipPath: "inset(0 round 28px)",
     opacity: 1,
+    y: 0,
+    scale: 1,
     transition: {
-      duration: 1.0,
+      duration: 0.9,
       ease: [0.22, 1, 0.36, 1],
     },
   },
