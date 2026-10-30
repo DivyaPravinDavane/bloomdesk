@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Calendar, Menu, ChevronDown, MapPin, Sparkles, MessageSquare } from "lucide-react";
+import { Phone, Calendar, Menu, ChevronDown, MapPin, Sparkles, MessageSquare, LogIn } from "lucide-react";
 import { siteConfig } from "@/data/site-content";
 import { locationsData } from "@/data/locations";
 import { Button } from "../ui/Button";
@@ -198,6 +198,14 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Phone className="w-3.5 h-3.5 text-[#008fb4]" />
               <span>{siteConfig.contact.primaryPhoneFormatted}</span>
+            </a>
+
+            <a
+              href="/signin"
+              className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold text-slate-700 hover:text-[#008fb4] hover:bg-slate-100/70 transition-colors"
+            >
+              <LogIn className="w-3.5 h-3.5 text-[#008fb4]" />
+              <span>Sign In</span>
             </a>
 
             <Button

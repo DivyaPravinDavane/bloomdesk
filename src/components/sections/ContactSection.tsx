@@ -17,113 +17,61 @@ export const ContactSection: React.FC = () => {
           align="center"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          {/* Left Column: Direct Contact Info (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-[#0F172A] text-white space-y-6 shadow-xl">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#008fb4] block mb-1">
-                  Official Communication
-                </span>
-                <h3 className="text-2xl font-bold">BloomDesk Mumbai Offices</h3>
-                <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-                  Multiple fully-furnished centers across Borivali East, Borivali West, and Kandivali West.
-                </p>
-              </div>
+        {/* Standalone Centered Inquiry Form matching the design screenshot */}
+        <div className="mt-10 sm:mt-12 flex justify-center">
+          <InquiryForm />
+        </div>
 
-              <div className="space-y-4 pt-4 border-t border-slate-800 text-xs sm:text-sm">
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#008fb4]/20 text-[#008fb4] flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">
-                      Primary Telephone
-                    </span>
-                    <a
-                      href={`tel:${siteConfig.contact.primaryPhone}`}
-                      className="text-base font-bold text-white hover:text-[#008fb4] transition-colors"
-                    >
-                      {siteConfig.contact.primaryPhoneFormatted}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#008fb4]/20 text-[#008fb4] flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">
-                      Secondary Desk
-                    </span>
-                    <a
-                      href={`tel:${siteConfig.contact.secondaryPhone}`}
-                      className="text-base font-bold text-white hover:text-[#008fb4] transition-colors"
-                    >
-                      {siteConfig.contact.secondaryPhoneFormatted}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#008fb4]/20 text-[#008fb4] flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">
-                      Email Inquiries
-                    </span>
-                    <a
-                      href={`mailto:${siteConfig.contact.email}`}
-                      className="text-base font-bold text-white hover:text-[#008fb4] transition-colors"
-                    >
-                      {siteConfig.contact.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#008fb4]/20 text-[#008fb4] flex items-center justify-center shrink-0">
-                    <Clock className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">
-                      Working Hours
-                    </span>
-                    <div className="text-slate-300 font-medium">
-                      {siteConfig.contact.operationalHours}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Instant WhatsApp Action */}
-              <div className="pt-2">
-                <a
-                  href={siteConfig.socialLinks.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-md"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>Chat with Us on WhatsApp</span>
-                </a>
-              </div>
+        {/* Quick Contact & Transparency Info Pills below form */}
+        <div className="max-w-[780px] mx-auto mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <a
+            href={`tel:${siteConfig.contact.primaryPhone}`}
+            className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow hover:border-[#31829e]/40 transition-all flex items-center gap-3.5 group"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#31829e]/10 text-[#31829e] flex items-center justify-center shrink-0 group-hover:bg-[#31829e] group-hover:text-white transition-colors">
+              <Phone className="w-5 h-5" />
             </div>
-
-            {/* Coverage note */}
-            <div className="p-4 rounded-2xl bg-white border border-slate-200/80 text-xs text-slate-600 flex items-center gap-3">
-              <ShieldCheck className="w-5 h-5 text-[#008fb4] shrink-0" />
-              <span>
-                100% transparent pricing with zero brokerage or hidden administrative charges.
+            <div>
+              <span className="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">
+                Direct Helpline
+              </span>
+              <span className="text-sm font-bold text-slate-800">
+                {siteConfig.contact.primaryPhoneFormatted}
               </span>
             </div>
-          </div>
+          </a>
 
-          {/* Right Column: Contact Inquiry Form (7 cols) */}
-          <div className="lg:col-span-7">
-            <InquiryForm />
+          <a
+            href={siteConfig.socialLinks.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow hover:border-emerald-500/40 transition-all flex items-center gap-3.5 group"
+          >
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+              <MessageSquare className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">
+                WhatsApp Desk
+              </span>
+              <span className="text-sm font-bold text-slate-800">
+                Chat with Manager
+              </span>
+            </div>
+          </a>
+
+          <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-[#31829e]/10 text-[#31829e] flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">
+                Zero Brokerage
+              </span>
+              <span className="text-xs font-semibold text-slate-700 leading-tight block">
+                100% direct manager pricing
+              </span>
+            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Phone, Mail, MapPin, Calendar, ArrowRight, MessageSquare } from "lucide-react";
+import { X, Phone, Mail, MapPin, Calendar, ArrowRight, MessageSquare, LogIn } from "lucide-react";
 import { siteConfig } from "@/data/site-content";
 import { locationsData } from "@/data/locations";
 import { Button } from "../ui/Button";
@@ -147,6 +147,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
             {/* Bottom Book CTA */}
             <div className="p-6 border-t border-slate-100 bg-slate-50/50 space-y-2">
+              <a
+                href="/signin"
+                onClick={onClose}
+                className="w-full py-2.5 px-4 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold flex items-center justify-center gap-2 transition-colors shadow-sm"
+              >
+                <LogIn className="w-3.5 h-3.5 text-[#008fb4]" />
+                Member Sign In
+              </a>
               <Button
                 variant="primary"
                 size="md"

@@ -26,7 +26,11 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
   onSuccess,
   className = "",
 }) => {
-  const defaultCenter = initialLocation || (locationsData.length > 0 ? `${locationsData[0].name} (${locationsData[0].area})` : "Borivali East I (Borivali East)");
+  const defaultCenter =
+    initialLocation ||
+    (locationsData.length > 0
+      ? `${locationsData[0].name} (${locationsData[0].area})`
+      : "Borivali East I (Borivali East)");
 
   const [form, setForm] = useState<InquiryFormData>({
     name: "",
@@ -68,13 +72,16 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
 
   if (submitted) {
     return (
-      <div className={`w-full bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-sm text-center py-12 ${className}`}>
+      <div
+        className={`w-full max-w-[780px] mx-auto bg-white p-8 sm:p-12 rounded-[28px] sm:rounded-[32px] border border-slate-200/80 shadow-sm text-center py-14 ${className}`}
+      >
         <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
           <CheckCircle2 className="w-9 h-9" />
         </div>
         <h4 className="text-2xl font-bold text-slate-900 mb-2">Inquiry Submitted!</h4>
         <p className="text-sm text-slate-600 max-w-md mx-auto mb-6">
-          Thank you, <strong>{form.name}</strong>. Our center manager for <strong>{form.center}</strong> will reach out via mobile/email within 1 working hour.
+          Thank you, <strong>{form.name}</strong>. Our center manager for{" "}
+          <strong>{form.center}</strong> will reach out via mobile/email within 1 working hour.
         </p>
         <button
           type="button"
@@ -98,10 +105,12 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
   }
 
   return (
-    <div className={`w-full bg-white p-6 sm:p-10 rounded-3xl border border-slate-200/70 shadow-sm ${className}`}>
-      <form onSubmit={handleSubmit} className="space-y-5">
+    <div
+      className={`w-full max-w-[780px] mx-auto bg-white p-8 sm:p-12 rounded-[28px] sm:rounded-[32px] border border-slate-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.04)] ${className}`}
+    >
+      <form onSubmit={handleSubmit} className="space-y-6">
         {/* Row 1: Name and Mobile Number */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           <div>
             <label className="block text-sm font-semibold text-slate-800 mb-2">
               Your Name *
@@ -114,9 +123,9 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 setForm({ ...form, name: e.target.value });
                 if (errors.name) setErrors({ ...errors, name: "" });
               }}
-              className={`w-full px-4 py-3 rounded-xl border ${
+              className={`w-full px-4 py-3.5 rounded-xl border ${
                 errors.name ? "border-red-500 bg-red-50/20" : "border-slate-200 bg-white"
-              } text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3186a2]/25 focus:border-[#3186a2] transition-colors`}
+              } text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#31829e]/20 focus:border-[#31829e] transition-all`}
             />
             {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
           </div>
@@ -133,16 +142,16 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 setForm({ ...form, phone: e.target.value });
                 if (errors.phone) setErrors({ ...errors, phone: "" });
               }}
-              className={`w-full px-4 py-3 rounded-xl border ${
+              className={`w-full px-4 py-3.5 rounded-xl border ${
                 errors.phone ? "border-red-500 bg-red-50/20" : "border-slate-200 bg-white"
-              } text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3186a2]/25 focus:border-[#3186a2] transition-colors`}
+              } text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#31829e]/20 focus:border-[#31829e] transition-all`}
             />
             {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
           </div>
         </div>
 
         {/* Row 2: Work Email and Interested Location */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           <div>
             <label className="block text-sm font-semibold text-slate-800 mb-2">
               Work Email *
@@ -155,9 +164,9 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 setForm({ ...form, email: e.target.value });
                 if (errors.email) setErrors({ ...errors, email: "" });
               }}
-              className={`w-full px-4 py-3 rounded-xl border ${
+              className={`w-full px-4 py-3.5 rounded-xl border ${
                 errors.email ? "border-red-500 bg-red-50/20" : "border-slate-200 bg-white"
-              } text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3186a2]/25 focus:border-[#3186a2] transition-colors`}
+              } text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#31829e]/20 focus:border-[#31829e] transition-all`}
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
           </div>
@@ -170,7 +179,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
               <select
                 value={form.center}
                 onChange={(e) => setForm({ ...form, center: e.target.value })}
-                className="w-full appearance-none px-4 py-3 pr-10 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#3186a2]/25 focus:border-[#3186a2] transition-colors cursor-pointer"
+                className="w-full appearance-none px-4 py-3.5 pr-10 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#31829e]/20 focus:border-[#31829e] transition-all cursor-pointer"
               >
                 {locationsData.map((loc) => (
                   <option key={loc.id} value={`${loc.name} (${loc.area})`}>
@@ -178,7 +187,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                   </option>
                 ))}
               </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-600">
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-500">
                 <ChevronDown className="w-4 h-4" />
               </div>
             </div>
@@ -194,15 +203,17 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
             <select
               value={form.workspace}
               onChange={(e) => setForm({ ...form, workspace: e.target.value })}
-              className="w-full appearance-none px-4 py-3 pr-10 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#3186a2]/25 focus:border-[#3186a2] transition-colors cursor-pointer"
+              className="w-full appearance-none px-4 py-3.5 pr-10 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#31829e]/20 focus:border-[#31829e] transition-all cursor-pointer"
             >
-              <option value="Private Office Cabin (2-20+ Seats)">Private Office Cabin (2-20+ Seats)</option>
+              <option value="Private Office Cabin (2-20+ Seats)">
+                Private Office Cabin (2-20+ Seats)
+              </option>
               <option value="Dedicated Fixed Desks">Dedicated Fixed Desks</option>
               <option value="Flexi Desk (Hot Desk)">Flexi Desk (Hot Desk)</option>
               <option value="Meeting / Boardroom by the Hour">Meeting / Boardroom by the Hour</option>
               <option value="Single Day Access Pass">Single Day Access Pass</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-600">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-500">
               <ChevronDown className="w-4 h-4" />
             </div>
           </div>
@@ -218,7 +229,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
             placeholder="Tell us about your team size, expected move-in date, or specific tech requirements..."
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="w-full p-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3186a2]/25 focus:border-[#3186a2] transition-colors resize-y"
+            className="w-full p-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#31829e]/20 focus:border-[#31829e] transition-all resize-y min-h-[110px]"
           />
         </div>
 
@@ -227,12 +238,12 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-3.5 px-6 rounded-full bg-[#3186a2] hover:bg-[#28738c] active:bg-[#206379] text-white font-medium text-base transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full h-14 rounded-full bg-[#31829e] hover:bg-[#28738c] active:bg-[#206177] text-white font-medium text-base transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer shadow-sm hover:shadow active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <span>{submitting ? "Submitting Inquiry..." : "Submit Inquiry to BloomDesk"}</span>
-            <Send className="w-4 h-4 text-white" />
+            <Send className="w-4 h-4 text-white stroke-[2.2]" />
           </button>
-          <p className="text-xs text-slate-400 text-center mt-3 font-normal">
+          <p className="text-xs text-slate-400 text-center mt-3.5 font-normal tracking-wide">
             Inquiries are handled directly by BloomDesk center managers. Your privacy is protected.
           </p>
         </div>
